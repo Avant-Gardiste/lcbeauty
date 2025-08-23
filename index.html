@@ -47,6 +47,17 @@
 
 </head>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const headerTopList = document.querySelector('.header-top-list');
+    if (headerTopList && window.innerWidth <= 574) {
+        // Dupliquer le contenu 3 fois pour un défilement infini parfait
+        const content = headerTopList.innerHTML;
+        headerTopList.innerHTML = content + ' • ' + content + ' • ' + content;
+    }
+});
+</script>
+
 
 <body id="top">
 
@@ -77,6 +88,7 @@
             <p class="item-text">Mardi - Samedi, 09h00 – 19h00</p>
           </li>
 
+
           <li>
             <ul class="social-list">
 
@@ -103,6 +115,8 @@
                   <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
                 </a>
               </li>
+
+              
 
             </ul>
           </li>
@@ -704,6 +718,7 @@
                 </div>
 
                 <input type="date" name="date" required class="input-field date">
+                <input type="time" name="time" required class="input-field time">
 
                 <textarea name="message" placeholder="Votre message" required class="input-field"></textarea>
 
@@ -1076,7 +1091,16 @@
     const phone = form.phone.value;
     const category = form.category.value;
     const date = form.date.value;
+    const time = form.time.value;
     const message = form.message.value;
+
+    // ✅ Générer le jour de la semaine
+    const days = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    let d = new Date(date);
+    let dayName = days[d.getDay()];
+
+    // ✅ Format lisible
+    const fullDate = `${dayName} ${d.toLocaleDateString("fr-FR")} à ${time}`;
 
     try {
       // 🔹 Enregistrement dans Firebase
@@ -1085,7 +1109,7 @@
         email,
         phone,
         category,
-        date,
+        fullDate,
         message,
         timestamp: serverTimestamp()
       });
@@ -1096,7 +1120,7 @@
         email,
         phone,
         category,
-        date,
+        fullDate,
         message
       });
 
@@ -1106,7 +1130,7 @@
         email,
         phone,
         category,
-        date,
+        fullDate,
         message
       });
 

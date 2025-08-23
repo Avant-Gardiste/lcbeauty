@@ -181,3 +181,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const headerTop = document.querySelector('.header-top');
+    if (headerTop) {
+        headerTop.classList.add('auto-scroll');
+    }
+});
+
+
+
