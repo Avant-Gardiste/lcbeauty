@@ -1708,3 +1708,9 @@ a.contact-link:is(:hover, :focus) { color: var(--white); }
 }
 
 
+.date:invalid::before{
+  content: "Date & Heure";
+  color : #000000;
+  position : absolute;
+  margin-left: 10px;
+}
