@@ -3,7 +3,7 @@
 
   <h2 align="center">Barber Website</h2>
 
-  Barber is a fully responsive barber website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+  Fully responsive barber website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
 </div>
 
@@ -34,10 +34,6 @@ Windows:
 ```bash
 git clone https://github.com/codewithsadee/barber.git
 ```
-
-### Contact
-
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
 
 ### License
 
