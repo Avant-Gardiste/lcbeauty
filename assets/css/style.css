@@ -714,13 +714,18 @@ body {
 .input-field {
   background-color: var(--white);
   color: var(--davys-gray);
-  min-height: 56px;
+  min-height: 56px;      /* garde pour une hauteur minimale */
+  height: 56px;          /* force une hauteur identique */
   padding-inline: 25px;
   border-radius: var(--radius-5);
   margin-block-end: 20px;
   outline: none;
   outline-offset: 0;
+  display: flex;         /* optionnel, pour centrer verticalement */
+  align-items: center;
+  box-sizing: border-box;
 }
+
 
 /* Pour les champs datetime-local (ils ont souvent un style particulier) */
 input[type="datetime-local"] {
