@@ -1,7 +1,7 @@
 <div align="center">
 
 
-  <h2 align="center">Barber - Barber Website</h2>
+  <h2 align="center">Barber Website</h2>
 
   Barber is a fully responsive barber website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
