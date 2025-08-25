@@ -722,6 +722,14 @@ body {
   outline-offset: 0;
 }
 
+/* Pour les champs datetime-local (ils ont souvent un style particulier) */
+input[type="datetime-local"] {
+  appearance: none; /* enlève le style natif sur certains navigateurs */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: normal;
+}
+
 .input-field:focus { outline: 3px solid var(--black_30); }
 
 select.input-field { appearance: none; }
@@ -1701,16 +1709,9 @@ a.contact-link:is(:hover, :focus) { color: var(--white); }
 }
 
 
-.input-field {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
 
-
-.date:invalid::before{
-  content: "Date & Heure";
-  color : #000000;
-  position : absolute;
-  margin-left: 10px;
+input[type="datetime-local"]::-webkit-datetime-edit,
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-clear-button {
+  display: none;
 }
